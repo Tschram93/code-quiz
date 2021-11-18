@@ -10,12 +10,22 @@
 </head>
 
 <body>
-    <div id="questionBox" class="hide"></div>
-    <div class="controls">
-        <button id="startBtn" class="btn tartBtn"> Start </button>
-        <button id="nextBtn" class="btn nextBtn hide"> Next </button>
+    <!-- Quiz Box Section  -->
+    <div class="container">
+        <div id="questionBox" class="hide">
+            <div id="questionText"> Question here </div>
+            <div id="options" class="btnGrid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn" class="btn tartBtn"> Start </button>
+            <button id="nextBtn" class="btn nextBtn hide"> Next </button>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 
