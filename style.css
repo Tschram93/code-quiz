@@ -52,7 +52,6 @@ body.incorrect {
 
 .btn:hover {
     border-color: #000000;
-    box-shadow: 7px 3px 15px 3px hsl(180, 100%, 25%);
 }
 
 .btn.incorrect {
@@ -93,6 +92,10 @@ body.incorrect {
 
 .hide {
     display:none;
+}
+
+#option:hover  {
+    box-shadow: 7px 3px 15px 3px hsl(180, 100%, 25%);
 }
 
 .show {
