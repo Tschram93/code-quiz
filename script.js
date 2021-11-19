@@ -12,7 +12,7 @@ startBtn.addEventListener('click', startQuiz)
 // Functions to:
 
 // randomize question order
-const randomQue, queIndex;
+let randomQue, queIndex;
 
 
 // startQuiz
@@ -26,7 +26,12 @@ function startQuiz() {
 
 // nextQue
 function nextQue() {
+    displayQuestion(randomQue[queIndex])
+}
 
+// Displays the question into the questionText
+function displayQuestion(question) {
+    questionText.innerText = questions[4].question
 }
 
 // Selection an option for the question being asked
