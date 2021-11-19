@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Ubuntu&display=swap');
 
 :root {
     --hue-correct: 145;
@@ -10,12 +10,12 @@
 *::before, 
 *::after {
     box-sizing: border-box;
-    font-family: 'Oswald', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 } 
 
 body{
     --hue: var(--hue-neutral);
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: hsl(var(--hue), 100%, 80%);
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -46,7 +46,8 @@ body.incorrect {
 }
 
 .btn.correct{
-
+    --hue: var(--hue-correct);
+    color: #000000;
 }
 
 .btn:hover {
@@ -55,7 +56,7 @@ body.incorrect {
 }
 
 .btn.incorrect {
-    
+    --hue: var(--hue-incorrect);
 }
 
 .btnGrid {
@@ -64,6 +65,12 @@ body.incorrect {
     grid-template-columns: repeat(2, auto);
     margin: 20px 0;
     padding: 5px 0;
+}
+
+.command {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -75,10 +82,23 @@ body.incorrect {
     width: 800px;
 }
 
-/* .hide {
+.nextBtn,
+.startBtn {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+
+.hide {
     display:none;
-} */
+}
 
 .show {
     display: block;
 } 
+
+.startBtn {
+    background-color: hsl(75, 80%, 50%);
+}
