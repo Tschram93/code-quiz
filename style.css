@@ -1,7 +1,84 @@
-.hide {
-    display:none;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root {
+    --hue-correct: 145;
+    --hue-incorrect: 0;
+    --hue-neutral: 200;
 }
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    font-family: 'Oswald', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+
+body{
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 20%);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.incorrect {
+    --hue: var(--hue-incorrect);
+}
+
+.btn {
+    --hue:var(--hue-neutral);
+    background: hsl(var(--hue), 100%, 50%);
+    border: 2px solid hsl(var(--hue), 100%, 25%);
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+}
+
+.btn.correct{
+
+}
+
+.btn:hover {
+    border-color: #000000;
+    box-shadow: 7px 3px 15px 3px hsl(180, 100%, 25%);
+}
+
+.btn.incorrect {
+    
+}
+
+.btnGrid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    margin: 20px 0;
+    padding: 5px 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px;
+    max-width: 80%;
+    padding: 10px;
+    width: 800px;
+}
+
+/* .hide {
+    display:none;
+} */
 
 .show {
     display: block;
-}
+} 
