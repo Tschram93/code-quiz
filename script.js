@@ -11,9 +11,15 @@ startBtn.addEventListener('click', startQuiz)
 
 // Functions to:
 
+// randomize question order
+const randomQue, queIndex;
+
+
 // startQuiz
 function startQuiz() {
     startBtn.classList.add('hide')
+    randomQue = questions.sort(() => Math.random() - 0.5)
+    queIndex = 0;
     questionBox.classList.remove('hide')
     nextQue()
 }
@@ -30,7 +36,7 @@ function selectOption() {
 
 //
 
-let questions = [{
+const questions = [{
         num: 1,
         question: ' Where is the correct location to insert javascript into the HTML ',
         options: [{
