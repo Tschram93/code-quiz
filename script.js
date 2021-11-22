@@ -5,6 +5,7 @@ const questionBox = document.querySelector('#questionBox');
 const questionText = document.querySelector('#questionText');
 const ruleCard = document.querySelector('#ruleCard');
 const startBtn = document.querySelector('#startBtn');
+const timer = document.querySelector('#timer');
 
 // Event Listeners
 startBtn.addEventListener('click', startQuiz)
@@ -19,6 +20,17 @@ nextBtn.addEventListener('click', () => {
 // randomize question order
 let randomQue, queIndex;
 
+// timer
+let timeCounter = 0;
+let timeLeft = 250;
+
+function time() {
+    function timeIt() {
+        timeCounter++;
+        timer.innerText = timeLeft - timeCounter;
+    }
+    setInterval(timeIt, 1000);
+}
 
 // startQuiz
 function startQuiz() {
@@ -28,6 +40,7 @@ function startQuiz() {
     queIndex = 0;
     questionBox.classList.remove('hide')
     nextQue()
+    time()
 }
 
 // nextQue
