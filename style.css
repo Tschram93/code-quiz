@@ -66,6 +66,11 @@ body.incorrect {
     padding: 5px 0;
 }
 
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 #cardBody{
     --hue:var(--hue-neutral);
     border-bottom: 2px  solid hsl(var(--hue), 100%, 25%);
@@ -137,4 +142,28 @@ li {
 
 .startBtn {
     background-color: hsl(75, 80%, 50%);
+}
+
+#timer{
+    --hue:var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 20%);
+    border-radius: 7px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    margin-right: 4px;
+    padding: 3px 8px;
+}
+
+#timerBox {
+    --hue:var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 45%);
+    border: 2px solid hsl(255, 100%, 7%);
+    border-radius: 4px;
+    display: flex;
+    font-weight: 600;
+    justify-content: end;
+    margin: 0px 5px 5px 0px;
+    padding: 6px 10px;
 }
