@@ -1,5 +1,5 @@
 // Selectors
-const options = document.querySelector('#options');
+const optionsList = document.querySelector('#optionsList');
 const nextBtn = document.querySelector('#nextBtn');
 const questionBox = document.querySelector('#questionBox');
 const questionText = document.querySelector('#questionText');
@@ -8,6 +8,10 @@ const startBtn = document.querySelector('#startBtn');
 // Event Listeners
 startBtn.addEventListener('click', startQuiz)
 
+nextBtn.addEventListener('click', () => {
+    queIndex++;
+    nextQue();
+})
 
 // Functions to:
 
@@ -26,20 +30,64 @@ function startQuiz() {
 
 // nextQue
 function nextQue() {
+    clearQuestionBox()
     displayQuestion(randomQue[queIndex])
 }
 
 // Displays the question into the questionText
-function displayQuestion(question) {
-    questionText.innerText = questions[4].question
+function displayQuestion(questions) {
+    questionText.innerText = questions.question
+    questions.options.forEach(options => {
+        const button = document.createElement('button');
+        button.innerText = options.option;
+        // console.log(options.option)
+        button.classList.add('btn')
+        if (options.correct) {
+            button.dataset.correct = options.option.correct
+        }
+        button.addEventListener('click', selectOption)
+        optionsList.appendChild(button)
+    });
 }
 
 // Selection an option for the question being asked
-function selectOption() {
-
+function selectOption(e) {
+    const desiredOption = e.target;
+    const correct = desiredOption.dataset.correct;
+    answerCheck(document.body, correct)
+    Array.from(optionsList.children).forEach(button => answerCheck(button, button.dataset.correct))
+    if (randomQue.length > queIndex + 1) {
+        nextBtn.classList.remove('hide')
+    } else {
+        startBtn.innerText = 'Restart';
+    }
 }
 
-//
+function answerCheck(element, correct) {
+    clearClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('incorrect')
+    }
+}
+
+function clearClass(element) {
+    nextBtn.classList.add('hide')
+    // clearClass()
+    element.classList.remove('correct')
+    element.classList.remove('incorrect')
+}
+
+//gets rid of default QuestionBox buttons and replaces with new.
+function clearQuestionBox() {
+    clearClass(document.body)
+    nextBtn.classList.add('hide')
+    while (optionsList.firstChild) {
+        optionsList.removeChild(optionsList.firstChild)
+    }
+}
+
 
 const questions = [{
         num: 1,
@@ -60,8 +108,9 @@ const questions = [{
                 option: `Both the head and body are correct`,
                 correct: true
             }
-        ],
+        ]
     },
+
     {
         num: 2,
         question: ' How is "Hello World" written to be displayed in an alert box? ',
