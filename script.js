@@ -3,6 +3,7 @@ const optionsList = document.querySelector('#optionsList');
 const nextBtn = document.querySelector('#nextBtn');
 const questionBox = document.querySelector('#questionBox');
 const questionText = document.querySelector('#questionText');
+const ruleCard = document.querySelector('#ruleCard');
 const startBtn = document.querySelector('#startBtn');
 
 // Event Listeners
@@ -22,6 +23,7 @@ let randomQue, queIndex;
 // startQuiz
 function startQuiz() {
     startBtn.classList.add('hide')
+    ruleCard.classList.add('hide')
     randomQue = questions.sort(() => Math.random() - 0.5)
     queIndex = 0;
     questionBox.classList.remove('hide')
