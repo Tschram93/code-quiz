@@ -21,15 +21,26 @@ nextBtn.addEventListener('click', () => {
 let randomQue, queIndex;
 
 // timer
-let timeCounter = 0;
-let timeLeft = 250;
 
-function time() {
-    function timeIt() {
-        timeCounter++;
-        timer.innerText = timeLeft - timeCounter;
-    }
-    setInterval(timeIt, 1000);
+setInterval(updateTimer, 1000);
+
+const startingMinutes = 2.5; //2 min 30 seconds
+
+let time = startingMinutes * 60; // 60 seconds
+
+function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    timer.innerText = `${minutes}: ${seconds}`;
+    time--;
+}
+
+// Subtract 20 seconds from timer
+function subtractTime() {
+
 }
 
 // startQuiz
@@ -40,7 +51,7 @@ function startQuiz() {
     queIndex = 0;
     questionBox.classList.remove('hide')
     nextQue()
-    time()
+    updateTimer()
 }
 
 // nextQue
