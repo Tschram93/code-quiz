@@ -5,7 +5,7 @@
 
 ![Screenshot of quiz](./assets/screencapture-file-C-Users-19892-Desktop-Codes-msu-Homework-coding-quiz-index-html-2022-01-23-02_43_43.png)
 ## Description
-
+[Link to Quiz](https://tschram93.github.io/code-quiz/)
 This a multiple choice quiz based on programming languages.
 
 ## Table of Contents
